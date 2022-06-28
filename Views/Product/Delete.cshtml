@@ -1,0 +1,44 @@
+﻿@model MVC_Project2021.ViewModels.ProductEditViewModel
+
+<form method="post">
+    <input asp-for="Id" hidden />
+    <div class="border p-3 col-md-12">
+        <div class="form-group row">
+            <h2 class="text pl-3">Delete Product</h2>
+        </div>
+        <div class="row">
+            <div class="col-md-8">
+                <div class="form-group row">
+                    <div class="col-md-3">
+                        <label asp-for="ProductName"></label>
+                    </div>
+                    <div class="col-md-8">
+                        <input asp-for="ProductName" disabled class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-md-3">
+                        <label asp-for="ProductCode"></label>
+                    </div>
+                    <div class="col-md-8">
+                        <input asp-for="ProductCode" disabled class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <span class="col-xs-offset-5">
+                        <input class="btn btn-danger w-100" type="submit" value="Delete" asp-action="DeletePost" />
+                        <a class="btn btn-success" asp-action="index">Back</a>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+@section Scripts{
+
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+
+}

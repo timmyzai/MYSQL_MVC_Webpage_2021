@@ -1,0 +1,103 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"] - MVC_Project2021</title>
+
+    <link rel="shortcut icon" href="~/lib/img/cool3.jpg" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="~/lib/img/cool3.jpg" />
+
+    <!-- imported bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- local library -->
+    <link rel="stylesheet" href="~/lib/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="~/lib/css/styles.css" type="text/css" />
+    <link rel="stylesheet" href="~/lib/css/font-awesome.min.css" type="text/css" />
+</head>
+<body>
+    <div class="wholebody">
+        <div id="header">
+        </div><!-- end header -->
+        <div class="menu-wrapper">
+            <div class="mobile-menu">
+                <nav class="navbar navbar-inverse">
+                    <div class="container-fluid">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar" aria-label="Toggle navigation">
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                        </div>
+                        <div id="navbar" class="navbar-collapse collapse">
+                            <ul class="nav navbar-nav">
+                                <li class="dropdown">
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Data Listing <span class="fa fa-angle-down"></span></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="nav-link text-dark" asp-area="" asp-controller="User" asp-action="Index">Users</a></li>
+                                        <li><a class="nav-link text-dark" asp-area="" asp-controller="Product" asp-action="Index">Products</a></li>
+                                    </ul>
+                                </li>
+                                @*<li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Banner Slider <span class="fa fa-angle-down"></span></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="nav-link text-dark" asp-area="" asp-controller="BannerSlider" asp-action="Index">Manage Slider</a></li>
+                                    </ul>
+                                </li>*@
+                            </ul>
+                        </div><!--/navbar-collapse -->
+                    </div><!--/.container-fluid -->
+                </nav>
+            </div><!-- end mobile-menu -->
+            <header class="vertical-header">
+                <div class="vertical-header-wrapper">
+                    <nav class="nav-menu">
+                        <ul class="primary-menu">
+                            <li class="child-menu dropdown">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            </li>
+                            <li class="child-menu dropdown">
+                                <a href="#" class="dropdown-toggle collapsed" data-toggle="collapse" data-target="#collapse1" role="button" aria-expanded="false" aria-controls="collapse1">
+                                    Data Listing
+                                    <span class="fa fa-angle-down"></span>
+                                </a>
+                                <ul id="collapse1" class="sub-menu collapse">
+                                    <li><a class="nav-link text-dark" asp-area="" asp-controller="User" asp-action="Index">Users</a></li>
+                                    <li><a class="nav-link text-dark" asp-area="" asp-controller="Product" asp-action="Index">Products</a></li>
+                                </ul>
+                            </li>
+                            @*<li class="child-menu dropdown">
+                                <a href="#" class="dropdown-toggle collapsed" data-toggle="collapse" data-target="#collapse2" role="button" aria-expanded="false" aria-controls="collapse2">
+                                    Banner Slider
+                                    <span class="fa fa-angle-down"></span>
+                                </a>
+                                <ul id="collapse2" class="sub-menu collapse">
+                                    <li><a class="nav-link text-dark" asp-area="" asp-controller="BannerSlider" asp-action="Index">Manage Slider</a></li>
+                                </ul>
+                            </li>*@
+                        </ul>
+                    </nav><!-- end nav-menu -->
+                </div><!-- end vertical-header-wrapper -->
+            </header><!-- end header -->
+        </div><!-- end menu-wrapper -->
+        <div id="main" class="right">
+            <div id="content" class="container-fluid">
+                @RenderBody()
+            </div>
+        </div>
+            <div id="footer">
+                <h2 class="text-center text-muted col-lg-offset-2"><small>MVC Project 2021</small></h2>
+            </div><!-- end footer -->
+        </div><!-- end whole body -->
+
+    <script src="~/lib/js/jquery.min.js"></script>
+    <script src="~/lib/js/bootstrap.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
